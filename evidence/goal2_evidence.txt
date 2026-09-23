@@ -1,0 +1,44 @@
+﻿===== DSS150P Goal 2 Evidence =====
+Captured: 2026-09-23T23:01:10.7209873+08:00
+
+===== Layer counts (run-all output) =====
+customers: 3000
+products:  599
+orders:    49998
+staging quarantine: 3
+curated rows: 49897
+curated quarantine: 104
+
+===== Quarantine breakdown (by reason) =====
+reason
+product_quarantined_upstream      99
+invalid_or_negative_unit_price     1
+quantity_out_of_range              1
+status_not_allowed                 1
+orphan_customer_reference          1
+orphan_product_reference           1
+
+===== Rerun-safe UPSERT (second load wrote 0 rows) =====
+$ python -m src.cli load  (same PIPELINE_RUN_ID)
+[load] run_id=full_test_1 rows written (insert+update): 0
+
+===== Duplicate check on curated.sales_order_lines =====
+ total | distinct_orders 
+-------+-----------------
+ 49897 |           49897
+(1 row)
+
+
+===== Audit trail (audit.pipeline_runs) =====
+ pipeline_run_id | status  | rows_staging | rows_curated | rows_quarantined |        started_at_utc         |       completed_at_utc        
+-----------------+---------+--------------+--------------+------------------+-------------------------------+-------------------------------
+ full_test_1     | SUCCESS |        49998 |        49897 |              104 | 2026-09-23 14:59:38.979606+00 | 2026-09-23 14:59:46.349211+00
+(1 row)
+
+
+===== Sample curated row (audit columns) =====
+ order_id | gross_amount | discount_amount | net_amount |  status   | pipeline_run_id |       processed_at_utc        |                           record_hash                            
+----------+--------------+-----------------+------------+-----------+-----------------+-------------------------------+------------------------------------------------------------------
+ O0048200 |    616241.20 |            0.00 |  616241.20 | DELIVERED | full_test_1     | 2026-09-23 14:59:39.597299+00 | 85f8c1752ee4413221184ef2ad182cca84f353b34f8f73952aa6e5d8190f6d4e
+(1 row)
+

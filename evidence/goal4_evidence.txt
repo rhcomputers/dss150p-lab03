@@ -1,0 +1,97 @@
+﻿===== DSS150P Goal 4 Evidence (Airflow) =====
+Captured: 2026-09-23T23:47:27.3674940+08:00
+
+===== DAG metadata =====
+dag_id                 | fileloc                               | owners  | is_paused
+=======================+=======================================+=========+==========
+dss150p_sales_pipeline | /opt/airflow/dags/dss150p_pipeline.py | dss150p | False    
+                                                                                    
+
+===== DAG tasks (8) =====
+begin_run
+choose_load_branch
+end_run
+extract
+load_full
+load_partition
+transform
+validate
+
+===== DAG task tree =====
+<Task(BashOperator): begin_run>
+    <Task(BashOperator): extract>
+        <Task(BashOperator): transform>
+            <Task(BranchPythonOperator): choose_load_branch>
+                <Task(BashOperator): load_full>
+                    <Task(BashOperator): validate>
+                        <Task(BashOperator): end_run>
+                <Task(BashOperator): load_partition>
+                    <Task(BashOperator): validate>
+                        <Task(BashOperator): end_run>
+
+===== DAG import errors =====
+No data found
+
+===== Recent runs =====
+dag_id                 | run_id                               | state   | execution_date            | start_date                       | end_date                        
+=======================+======================================+=========+===========================+==================================+=================================
+dss150p_sales_pipeline | manual__2026-09-23T15:45:49+00:00    | success | 2026-09-23T15:45:49+00:00 | 2026-09-23T15:45:50.458554+00:00 | 2026-09-23T15:46:09.673043+00:00
+dss150p_sales_pipeline | manual__2026-09-23T15:36:45+00:00    | success | 2026-09-23T15:36:45+00:00 | 2026-09-23T15:40:45.185155+00:00 | 2026-09-23T15:41:07.692611+00:00
+dss150p_sales_pipeline | manual__2026-09-23T15:27:34+00:00    | success | 2026-09-23T15:27:34+00:00 | 2026-09-23T15:40:45.185095+00:00 | 2026-09-23T15:41:09.587032+00:00
+dss150p_sales_pipeline | scheduled__2026-09-22T02:00:00+00:00 | success | 2026-09-22T02:00:00+00:00 | 2026-09-23T15:27:18.662111+00:00 | 2026-09-23T15:27:38.967399+00:00
+                                                                                                                                                                         
+
+===== Partition-mode run: manual__2026-09-23T15:45:49+00:00 (year=2026, month=5) =====
+dag_id                 | execution_date            | task_id            | state   | start_date                       | end_date                        
+=======================+===========================+====================+=========+==================================+=================================
+dss150p_sales_pipeline | 2026-09-23T15:45:49+00:00 | begin_run          | success | 2026-09-23T15:45:50.680735+00:00 | 2026-09-23T15:45:52.232015+00:00
+dss150p_sales_pipeline | 2026-09-23T15:45:49+00:00 | extract            | success | 2026-09-23T15:45:52.809837+00:00 | 2026-09-23T15:45:54.379349+00:00
+dss150p_sales_pipeline | 2026-09-23T15:45:49+00:00 | transform          | success | 2026-09-23T15:45:54.951842+00:00 | 2026-09-23T15:46:00.177435+00:00
+dss150p_sales_pipeline | 2026-09-23T15:45:49+00:00 | load_full          | skipped | 2026-09-23T15:46:01.026109+00:00 | 2026-09-23T15:46:01.026109+00:00
+dss150p_sales_pipeline | 2026-09-23T15:45:49+00:00 | choose_load_branch | success | 2026-09-23T15:46:00.794739+00:00 | 2026-09-23T15:46:01.096862+00:00
+dss150p_sales_pipeline | 2026-09-23T15:45:49+00:00 | load_partition     | success | 2026-09-23T15:46:01.977593+00:00 | 2026-09-23T15:46:03.911898+00:00
+dss150p_sales_pipeline | 2026-09-23T15:45:49+00:00 | validate           | success | 2026-09-23T15:46:05.179193+00:00 | 2026-09-23T15:46:06.817007+00:00
+dss150p_sales_pipeline | 2026-09-23T15:45:49+00:00 | end_run            | success | 2026-09-23T15:46:07.765988+00:00 | 2026-09-23T15:46:09.357292+00:00
+                                                                                                                                                       
+
+===== Full-mode run: manual__2026-09-23T15:27:34+00:00 (default params) =====
+dag_id                 | execution_date            | task_id            | state   | start_date                       | end_date                        
+=======================+===========================+====================+=========+==================================+=================================
+dss150p_sales_pipeline | 2026-09-23T15:27:34+00:00 | begin_run          | success | 2026-09-23T15:40:45.475698+00:00 | 2026-09-23T15:40:47.203148+00:00
+dss150p_sales_pipeline | 2026-09-23T15:27:34+00:00 | extract            | success | 2026-09-23T15:40:47.827700+00:00 | 2026-09-23T15:40:49.666881+00:00
+dss150p_sales_pipeline | 2026-09-23T15:27:34+00:00 | transform          | success | 2026-09-23T15:40:50.613712+00:00 | 2026-09-23T15:40:56.980674+00:00
+dss150p_sales_pipeline | 2026-09-23T15:27:34+00:00 | load_partition     | skipped | 2026-09-23T15:40:58.173771+00:00 | 2026-09-23T15:40:58.173771+00:00
+dss150p_sales_pipeline | 2026-09-23T15:27:34+00:00 | choose_load_branch | success | 2026-09-23T15:40:57.906698+00:00 | 2026-09-23T15:40:58.207841+00:00
+dss150p_sales_pipeline | 2026-09-23T15:27:34+00:00 | load_full          | success | 2026-09-23T15:40:58.620672+00:00 | 2026-09-23T15:41:03.482251+00:00
+dss150p_sales_pipeline | 2026-09-23T15:27:34+00:00 | validate           | success | 2026-09-23T15:41:04.725158+00:00 | 2026-09-23T15:41:06.641097+00:00
+dss150p_sales_pipeline | 2026-09-23T15:27:34+00:00 | end_run            | success | 2026-09-23T15:41:07.887632+00:00 | 2026-09-23T15:41:09.536430+00:00
+                                                                                                                                                       
+
+===== Failure/retry/recovery evidence (begin_run indentation bug) =====
+See git history and the earlier states dumps in this run. Timeline:
+  1. begin_run failed twice with retries (up_for_retry) due to IndentationError in src/cli.py.
+  2. Because begin_run is upstream of everything, all downstream tasks were marked upstream_failed.
+  3. Fix applied: src/cli.py indentation corrected; DAG file rewritten with proper begin/end wiring.
+  4. Recovery: airflow tasks clear dss150p_sales_pipeline -s 2026-09-23 -e 2026-09-24 --yes
+  5. Next scheduler heartbeat re-dispatched every task and the run completed successfully.
+
+===== audit.pipeline_runs (narrow format) =====
+pipeline_run_id | status | rows_staging | rows_curated | rows_quarantined | completed_at_utc
+manual__2026-09-23T15:45:49+00:00 | SUCCESS | 49998 | 49897 | 104 | 2026-09-23 15:46:09.228462+00
+manual__2026-09-23T15:27:34+00:00 | SUCCESS | 49998 | 49897 | 3 | 2026-09-23 15:41:09.372746+00
+manual__2026-09-23T15:36:45+00:00 | SUCCESS | 49998 | 49897 | 3 | 2026-09-23 15:41:06.504813+00
+full_test_1 | SUCCESS | 49998 | 49897 | 104 | 2026-09-23 14:59:46.349211+00
+(4 rows)
+
+===== audit.partition_loads (narrow format) =====
+partition_key | row_count | pipeline_run_id | loaded_at_utc
+2026-05 | 2500 | manual__2026-09-23T15:45:49+00:00 | 2026-09-23 15:46:03.774496+00
+2026-03 | 2474 | manual__2026-09-23T15:36:45+00:00 | 2026-09-23 15:41:00.4604+00
+2026-01 | 2506 | full_test_1 | 2026-09-23 15:14:21.007738+00
+(3 rows)
+
+===== Note on the 3 vs 104 discrepancy =====
+The runs at 15:27:34 and 15:36:45 executed before the fix that persists the merged quarantine to disk.
+At that time, end-run read only data/quarantine/run_id=<id>/quarantine.parquet (staging-only, 3 rows).
+After the fix, build_curated writes quarantine_curated.parquet (staging + curated = 104 rows),
+and end-run reads that file instead. The run at 15:45:49 (year=2026, month=5) demonstrates the corrected behavior.

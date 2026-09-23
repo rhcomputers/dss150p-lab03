@@ -1,0 +1,40 @@
+﻿===== docker images (pipeline image) =====
+IMAGE                                        ID             DISK USAGE   CONTENT SIZE   EXTRA
+dss150p_lab03_leyte_reagan-pipeline:latest   2c07e085d9f3        932MB          214MB        
+
+===== docker compose ps =====
+NAME               IMAGE         COMMAND                  SERVICE    CREATED         STATUS                   PORTS
+dss150p-postgres   postgres:16   "docker-entrypoint.sΓÇª"   postgres   2 minutes ago   Up 2 minutes (healthy)   0.0.0.0:5432->5432/tcp, [::]:5432->5432/tcp
+
+===== containerized validate-env =====
+PROJECT_ROOT= /app
+DB host/database= postgres dss150p
+Configured source= data/source
+
+===== postgres schemas =====
+       List of schemas
+  Name   |       Owner       
+---------+-------------------
+ audit   | dss150p
+ curated | dss150p
+ public  | pg_database_owner
+ staging | dss150p
+(4 rows)
+
+
+===== curated tables =====
+               List of relations
+ Schema  |       Name        | Type  |  Owner  
+---------+-------------------+-------+---------
+ curated | sales_order_lines | table | dss150p
+(1 row)
+
+
+===== audit tables =====
+             List of relations
+ Schema |      Name       | Type  |  Owner  
+--------+-----------------+-------+---------
+ audit  | partition_loads | table | dss150p
+ audit  | pipeline_runs   | table | dss150p
+(2 rows)
+

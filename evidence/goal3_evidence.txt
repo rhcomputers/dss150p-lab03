@@ -1,0 +1,96 @@
+﻿===== DSS150P Goal 3 Evidence =====
+Captured: 2026-09-23T23:14:49.0487808+08:00
+
+===== Benchmark results (data/benchmarks/benchmark_results.csv) =====
+format,size_bytes,write_seconds,full_read_median_seconds,filtered_read_median_seconds,row_count
+csv,14049310,1.1564,0.2793,0.2609,8355
+jsonl,29741800,0.8769,0.7405,0.7589,8355
+parquet,5456333,0.1087,0.0581,0.0529,8355
+postgres,15826944,,0.5389,0.0114,8355
+
+===== Machine context (data/benchmarks/benchmark_context.json) =====
+{
+  "platform": "Windows-10-10.0.19045-SP0",
+  "machine": "AMD64",
+  "processor": "Intel64 Family 6 Model 165 Stepping 2, GenuineIntel",
+  "python": "3.12.8",
+  "pandas": "2.2.3",
+  "pyarrow": "17.0.0"
+}
+
+===== Partition tree (year/month directories) =====
+C:\Users\Enduser\Desktop\DSS150P_Lab03_Leyte_Reagan\data\partitioned\order_year=2025
+C:\Users\Enduser\Desktop\DSS150P_Lab03_Leyte_Reagan\data\partitioned\order_year=2026
+C:\Users\Enduser\Desktop\DSS150P_Lab03_Leyte_Reagan\data\partitioned\order_year=2025\order_month=1
+C:\Users\Enduser\Desktop\DSS150P_Lab03_Leyte_Reagan\data\partitioned\order_year=2025\order_month=10
+C:\Users\Enduser\Desktop\DSS150P_Lab03_Leyte_Reagan\data\partitioned\order_year=2025\order_month=11
+C:\Users\Enduser\Desktop\DSS150P_Lab03_Leyte_Reagan\data\partitioned\order_year=2025\order_month=12
+C:\Users\Enduser\Desktop\DSS150P_Lab03_Leyte_Reagan\data\partitioned\order_year=2025\order_month=2
+C:\Users\Enduser\Desktop\DSS150P_Lab03_Leyte_Reagan\data\partitioned\order_year=2025\order_month=3
+C:\Users\Enduser\Desktop\DSS150P_Lab03_Leyte_Reagan\data\partitioned\order_year=2025\order_month=4
+C:\Users\Enduser\Desktop\DSS150P_Lab03_Leyte_Reagan\data\partitioned\order_year=2025\order_month=5
+C:\Users\Enduser\Desktop\DSS150P_Lab03_Leyte_Reagan\data\partitioned\order_year=2025\order_month=6
+C:\Users\Enduser\Desktop\DSS150P_Lab03_Leyte_Reagan\data\partitioned\order_year=2025\order_month=7
+C:\Users\Enduser\Desktop\DSS150P_Lab03_Leyte_Reagan\data\partitioned\order_year=2025\order_month=8
+C:\Users\Enduser\Desktop\DSS150P_Lab03_Leyte_Reagan\data\partitioned\order_year=2025\order_month=9
+C:\Users\Enduser\Desktop\DSS150P_Lab03_Leyte_Reagan\data\partitioned\order_year=2026\order_month=1
+C:\Users\Enduser\Desktop\DSS150P_Lab03_Leyte_Reagan\data\partitioned\order_year=2026\order_month=2
+C:\Users\Enduser\Desktop\DSS150P_Lab03_Leyte_Reagan\data\partitioned\order_year=2026\order_month=3
+C:\Users\Enduser\Desktop\DSS150P_Lab03_Leyte_Reagan\data\partitioned\order_year=2026\order_month=4
+C:\Users\Enduser\Desktop\DSS150P_Lab03_Leyte_Reagan\data\partitioned\order_year=2026\order_month=5
+C:\Users\Enduser\Desktop\DSS150P_Lab03_Leyte_Reagan\data\partitioned\order_year=2026\order_month=6
+C:\Users\Enduser\Desktop\DSS150P_Lab03_Leyte_Reagan\data\partitioned\order_year=2026\order_month=7
+C:\Users\Enduser\Desktop\DSS150P_Lab03_Leyte_Reagan\data\partitioned\order_year=2026\order_month=8
+C:\Users\Enduser\Desktop\DSS150P_Lab03_Leyte_Reagan\data\partitioned\order_year=2026\order_month=9
+
+===== Partition file sizes =====
+
+FullName                                                                                                                                       Length
+--------                                                                                                                                       ------
+C:\Users\Enduser\Desktop\DSS150P_Lab03_Leyte_Reagan\data\partitioned\order_year=2025\order_month=1\3def3b8ab45b4b8cb9c3feceeaf9d2d6-0.parquet  320474
+C:\Users\Enduser\Desktop\DSS150P_Lab03_Leyte_Reagan\data\partitioned\order_year=2025\order_month=10\3def3b8ab45b4b8cb9c3feceeaf9d2d6-0.parquet 319197
+C:\Users\Enduser\Desktop\DSS150P_Lab03_Leyte_Reagan\data\partitioned\order_year=2025\order_month=11\3def3b8ab45b4b8cb9c3feceeaf9d2d6-0.parquet 313661
+C:\Users\Enduser\Desktop\DSS150P_Lab03_Leyte_Reagan\data\partitioned\order_year=2025\order_month=12\3def3b8ab45b4b8cb9c3feceeaf9d2d6-0.parquet 319504
+C:\Users\Enduser\Desktop\DSS150P_Lab03_Leyte_Reagan\data\partitioned\order_year=2025\order_month=2\3def3b8ab45b4b8cb9c3feceeaf9d2d6-0.parquet  300467
+C:\Users\Enduser\Desktop\DSS150P_Lab03_Leyte_Reagan\data\partitioned\order_year=2025\order_month=3\3def3b8ab45b4b8cb9c3feceeaf9d2d6-0.parquet  316643
+C:\Users\Enduser\Desktop\DSS150P_Lab03_Leyte_Reagan\data\partitioned\order_year=2025\order_month=4\3def3b8ab45b4b8cb9c3feceeaf9d2d6-0.parquet  310048
+C:\Users\Enduser\Desktop\DSS150P_Lab03_Leyte_Reagan\data\partitioned\order_year=2025\order_month=5\3def3b8ab45b4b8cb9c3feceeaf9d2d6-0.parquet  327744
+C:\Users\Enduser\Desktop\DSS150P_Lab03_Leyte_Reagan\data\partitioned\order_year=2025\order_month=6\3def3b8ab45b4b8cb9c3feceeaf9d2d6-0.parquet  319440
+C:\Users\Enduser\Desktop\DSS150P_Lab03_Leyte_Reagan\data\partitioned\order_year=2025\order_month=7\3def3b8ab45b4b8cb9c3feceeaf9d2d6-0.parquet  319391
+C:\Users\Enduser\Desktop\DSS150P_Lab03_Leyte_Reagan\data\partitioned\order_year=2025\order_month=8\3def3b8ab45b4b8cb9c3feceeaf9d2d6-0.parquet  324659
+C:\Users\Enduser\Desktop\DSS150P_Lab03_Leyte_Reagan\data\partitioned\order_year=2025\order_month=9\3def3b8ab45b4b8cb9c3feceeaf9d2d6-0.parquet  317058
+C:\Users\Enduser\Desktop\DSS150P_Lab03_Leyte_Reagan\data\partitioned\order_year=2026\order_month=1\3def3b8ab45b4b8cb9c3feceeaf9d2d6-0.parquet  326096
+C:\Users\Enduser\Desktop\DSS150P_Lab03_Leyte_Reagan\data\partitioned\order_year=2026\order_month=2\3def3b8ab45b4b8cb9c3feceeaf9d2d6-0.parquet  319475
+C:\Users\Enduser\Desktop\DSS150P_Lab03_Leyte_Reagan\data\partitioned\order_year=2026\order_month=3\3def3b8ab45b4b8cb9c3feceeaf9d2d6-0.parquet  320587
+C:\Users\Enduser\Desktop\DSS150P_Lab03_Leyte_Reagan\data\partitioned\order_year=2026\order_month=4\3def3b8ab45b4b8cb9c3feceeaf9d2d6-0.parquet  311751
+C:\Users\Enduser\Desktop\DSS150P_Lab03_Leyte_Reagan\data\partitioned\order_year=2026\order_month=5\3def3b8ab45b4b8cb9c3feceeaf9d2d6-0.parquet  326616
+C:\Users\Enduser\Desktop\DSS150P_Lab03_Leyte_Reagan\data\partitioned\order_year=2026\order_month=6\3def3b8ab45b4b8cb9c3feceeaf9d2d6-0.parquet  314978
+C:\Users\Enduser\Desktop\DSS150P_Lab03_Leyte_Reagan\data\partitioned\order_year=2026\order_month=7\3def3b8ab45b4b8cb9c3feceeaf9d2d6-0.parquet  320078
+C:\Users\Enduser\Desktop\DSS150P_Lab03_Leyte_Reagan\data\partitioned\order_year=2026\order_month=8\3def3b8ab45b4b8cb9c3feceeaf9d2d6-0.parquet  325638
+C:\Users\Enduser\Desktop\DSS150P_Lab03_Leyte_Reagan\data\partitioned\order_year=2026\order_month=9\3def3b8ab45b4b8cb9c3feceeaf9d2d6-0.parquet  140487
+
+
+
+===== Partition row totals =====
+partition files: 21
+total rows across partitions: 49897
+
+===== load-partition first run (2026-01) =====
+[load-partition] 2026-01 rows written: 0
+
+===== load-partition second run (2026-01, idempotency) =====
+[load-partition] 2026-01 rows written: 0
+
+===== audit.partition_loads =====
+ partition_key | row_count | pipeline_run_id |         loaded_at_utc         
+---------------+-----------+-----------------+-------------------------------
+ 2026-01       |      2506 | full_test_1     | 2026-09-23 15:14:21.007738+00
+(1 row)
+
+
+===== Curated table size (pg_total_relation_size) =====
+ total_size | rows  | distinct_orders 
+------------+-------+-----------------
+ 15 MB      | 49897 |           49897
+(1 row)
+
