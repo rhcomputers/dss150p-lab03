@@ -1,0 +1,21 @@
+[2026-09-23T15:52:55.474+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-09-23T15:52:55.501+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dss150p_sales_pipeline.choose_load_branch manual__2026-09-23T15:52:42+00:00 [queued]>
+[2026-09-23T15:52:55.511+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dss150p_sales_pipeline.choose_load_branch manual__2026-09-23T15:52:42+00:00 [queued]>
+[2026-09-23T15:52:55.513+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 3
+[2026-09-23T15:52:55.527+0000] {taskinstance.py:2890} INFO - Executing <Task(BranchPythonOperator): choose_load_branch> on 2026-09-23 15:52:42+00:00
+[2026-09-23T15:52:55.534+0000] {standard_task_runner.py:72} INFO - Started process 374 to run task
+[2026-09-23T15:52:55.538+0000] {standard_task_runner.py:104} INFO - Running: ['airflow', 'tasks', 'run', 'dss150p_sales_pipeline', 'choose_load_branch', 'manual__2026-09-23T15:52:42+00:00', '--job-id', '11', '--raw', '--subdir', 'DAGS_FOLDER/dss150p_pipeline.py', '--cfg-path', '/tmp/tmp55h7e17v']
+[2026-09-23T15:52:55.541+0000] {standard_task_runner.py:105} INFO - Job 11: Subtask choose_load_branch
+[2026-09-23T15:52:55.608+0000] {task_command.py:467} INFO - Running <TaskInstance: dss150p_sales_pipeline.choose_load_branch manual__2026-09-23T15:52:42+00:00 [running]> on host a54d77175d05
+[2026-09-23T15:52:55.717+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='dss150p' AIRFLOW_CTX_DAG_ID='dss150p_sales_pipeline' AIRFLOW_CTX_TASK_ID='choose_load_branch' AIRFLOW_CTX_EXECUTION_DATE='2026-09-23T15:52:42+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-09-23T15:52:42+00:00'
+[2026-09-23T15:52:55.720+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2026-09-23T15:52:55.735+0000] {baseoperator.py:423} WARNING - BranchPythonOperator.execute cannot be called outside TaskInstance!
+[2026-09-23T15:52:55.736+0000] {python.py:240} INFO - Done. Returned value was: load_full
+[2026-09-23T15:52:55.737+0000] {branch.py:38} INFO - Branch into load_full
+[2026-09-23T15:52:55.738+0000] {skipmixin.py:233} INFO - Following branch ('load_full',)
+[2026-09-23T15:52:55.757+0000] {skipmixin.py:281} INFO - Skipping tasks [('load_partition', -1)]
+[2026-09-23T15:52:55.794+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2026-09-23T15:52:55.796+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=dss150p_sales_pipeline, task_id=choose_load_branch, run_id=manual__2026-09-23T15:52:42+00:00, execution_date=20260923T155242, start_date=20260923T155255, end_date=20260923T155255
+[2026-09-23T15:52:55.833+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2026-09-23T15:52:55.870+0000] {taskinstance.py:3901} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-09-23T15:52:55.873+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
