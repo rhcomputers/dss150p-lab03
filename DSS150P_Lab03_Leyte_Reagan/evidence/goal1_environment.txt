@@ -1,0 +1,16 @@
+﻿Python 3.12.8
+numpy==2.5.3
+pandas==2.2.3
+psycopg==3.2.3
+psycopg-binary==3.2.3
+pyarrow==17.0.0
+python-dateutil==2.9.0.post0
+python-dotenv==1.0.1
+pytz==2026.3.post1
+PyYAML==6.0.2
+six==1.17.0
+typing_extensions==4.16.0
+tzdata==2026.4
+PROJECT_ROOT= C:\Users\Enduser\Desktop\DSS150P_Lab03_Leyte_Reagan
+DB host/database= localhost dss150p
+Configured source= data/source
